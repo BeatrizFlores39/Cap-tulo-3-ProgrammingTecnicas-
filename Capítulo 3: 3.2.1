@@ -1,0 +1,25 @@
+//3.2.1
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n; // lee el tamaño del arreglo
+    vector<int> array(n);
+    for (int i = 0; i < n; i++) {
+        cin >> array[i]; // lee los elementos del arreglo
+    }
+
+    // Implementación eficiente (Kadane)
+    int best = array[0];
+    int sum = 0;
+    for (int k = 0; k < n; k++) {
+        sum = max(array[k], sum + array[k]);
+        best = max(best, sum);
+    }
+
+    cout << best << "\n";
+
+    return 0;
+    
+}
