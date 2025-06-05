@@ -1,0 +1,27 @@
+//3.3.2
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    vector<vector<int>> x(n, vector<int>(n));
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            cin >> x[i][j];
+
+    long long s1 = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            s1 += x[i][j];
+
+    long long s2 = 0;
+    for (int j = 0; j < n; j++)
+        for (int i = 0; i < n; i++)
+            s2 += x[i][j];
+
+    cout << "Suma por filas: " << s1 << "\n";
+    cout << "Suma por columnas: " << s2 << "\n";
+
+    return 0;
+}
